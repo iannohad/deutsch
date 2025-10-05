@@ -1,5 +1,5 @@
 // Simple vocabulary list: question → answer
-import { vocabList } from './vocabList.js'
+import {vocabList} from './vocabList.js'
 
 let currentIndex = 0;
 
