@@ -17,7 +17,7 @@ function showQuestion() {
   resultEl.textContent = "";
   answerEl.value = "";
   const vocab = vocabList[currentIndex];
-  questionEl.textContent = `What does "${vocab.word}" mean?`;
+  questionEl.textContent = `What does "${vocab.word}" mean?-enter key version`;
 }
 
 document.getElementById("check-btn").addEventListener("click", () => {
@@ -50,3 +50,4 @@ document.getElementById("next-btn").addEventListener("click", () => {
 });
 
 showQuestion();
+
