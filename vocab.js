@@ -1,5 +1,5 @@
 // Simple vocabulary list: question → answer
-import {vocabList} from './vocabList.js'
+import { vocabList } from "./vocabList.js"
 
 let currentIndex = 0;
 
@@ -10,12 +10,12 @@ const resultEl = document.getElementById("result");
 const enterBtn = document.getElementById("enter-btn");
 
 function showQuestion() {
-  resultEl.textContent = '';
-  answerEl.value = '';
+  resultEl.textContent = "";
+  answerEl.value = "";
   const vocab = vocabList[currentIndex];
   questionEl.textContent = `${vocab.problem}`;
-  rateEl.textContent = '[[add rate feature]]'
-  enterBtn.textContent = 'Enter'
+  rateEl.textContent = "[[add rate feature]]"
+  enterBtn.textContent = "Enter"
 }
 
 // Make a function to check the answer (used by both click and Enter)
@@ -31,12 +31,12 @@ function checkAnswer() {
   const correct = vocabList[currentIndex].answer.toLowerCase();
 
   if (userAnswer === correct) {
-    resultEl.textContent = 'Richtig!';
-    resultEl.style.color = 'green';
-    enterBtn.textContent = 'Next'
+    resultEl.textContent = "Richtig!";
+    resultEl.style.color = "green";
+    enterBtn.textContent = "Next"
   } else {
     resultEl.textContent = `Falsch. Die richtige Antwort ist "${correct}".`;
-    resultEl.style.color = 'red';
+    resultEl.style.color = "red";
   }
 }
 
@@ -46,19 +46,19 @@ function nextWord() {
 }
 
 function btnPressed() {
-    if (enterBtn.textContent === 'Enter') {
+    if (enterBtn.textContent === "Enter") {
         checkAnswer();
     } else {
         nextWord();
     }
 }
 
-enterBtn.addEventListener('click', () => {
+enterBtn.addEventListener("click", () => {
     btnPressed();
 });
 
-answerEl.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
+answerEl.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
         btnPressed();
     }
 });
