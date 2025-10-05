@@ -12,15 +12,17 @@ let currentIndex = 0;
 const questionEl = document.getElementById("question");
 const answerEl = document.getElementById("answer");
 const resultEl = document.getElementById("result");
+const checkBtn = document.getElementById("check-btn");
 
 function showQuestion() {
   resultEl.textContent = "";
   answerEl.value = "";
   const vocab = vocabList[currentIndex];
-  questionEl.textContent = `What does "${vocab.word}" mean?-enter key version`;
+  questionEl.textContent = `What does "${vocab.word}" mean?--enter key version`;
 }
 
-document.getElementById("check-btn").addEventListener("click", () => {
+// ✅ Make a function to check the answer (used by both click and Enter)
+function checkAnswer() {
   const userAnswer = answerEl.value.trim().toLowerCase();
   const correct = vocabList[currentIndex].meaning.toLowerCase();
 
@@ -31,7 +33,7 @@ document.getElementById("check-btn").addEventListener("click", () => {
     resultEl.textContent = `❌ Wrong. The correct answer is "${correct}".`;
     resultEl.style.color = "red";
   }
-});
+}
 
 // When the "Check" button is clicked
 checkBtn.addEventListener("click", checkAnswer);
@@ -50,4 +52,3 @@ document.getElementById("next-btn").addEventListener("click", () => {
 });
 
 showQuestion();
-
