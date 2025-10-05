@@ -33,6 +33,17 @@ document.getElementById("check-btn").addEventListener("click", () => {
   }
 });
 
+// When the "Check" button is clicked
+checkBtn.addEventListener("click", checkAnswer);
+
+// ✅ When the Enter key is pressed inside the input box
+answerEl.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    checkAnswer();
+  }
+});
+
+// When the "Next Word" button is clicked
 document.getElementById("next-btn").addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % vocabList.length;
   showQuestion();
