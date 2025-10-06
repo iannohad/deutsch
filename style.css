@@ -26,7 +26,17 @@ button {
   cursor: pointer;
 }
 
+#question {
+  font-size: 22px;
+}
+
+#hint {
+  font-size:20px;
+  color: #777;
+}
+
 #result {
+  font-size: 22px;
   margin-top: 15px;
   font-weight: bold;
 }
