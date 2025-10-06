@@ -3,7 +3,7 @@ import { probSets } from "./probSets.js"
 let selectedSetName = localStorage.getItem("selectedSet");
 let probList = probSets[selectedSetName];
 
-let currentIndex = 0;
+let currentIndex = Math.floor(Math.random() * probList.length);
 
 const questionEl = document.getElementById("question");
 const rateEl = document.getElementById("rate");
@@ -70,7 +70,7 @@ function checkAnswer() {
 function nextWord() {
   // TODO: random
   let rand = Math.random();
-  let add = Math.floor(rand * probList.length) + 1;
+  let add = Math.floor(rand * (probList.length - 1)) + 1;
   currentIndex = (currentIndex + add) % probList.length;
   showQuestion();
 }
